@@ -27,7 +27,7 @@ jobs:
 
   # Deploy to the production environment.
   deploy-production:
-    uses: ccie/My-website-environments/.github/workflows/deploy.yml@main
+    uses: ccie9773/my-website-environments/.github/workflows/deploy.yml@main
     needs: deploy-test
     with:
       environmentType: Production
