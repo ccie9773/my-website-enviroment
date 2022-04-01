@@ -1,4 +1,4 @@
-name: deploy-My-website-environments
+name: deploy-My-website-environment
 concurrency: My-company
 
 on:
@@ -13,11 +13,11 @@ env:
 
 jobs:
   lint:
-    uses: ccie9773/my-website-environments/.github/workflows/lint.yml@main
+    uses: ccie9773/my-website-environment/.github/workflows/lint.yml@main
 
   # Deploy to the test environment.
   deploy-test:
-    uses: ccie9773/my-website-environments/.github/workflows/deploy.yml@main
+    uses: ccie9773/my-website-environment/.github/workflows/deploy.yml@main
     needs: lint
     with:
       environmentType: Test
@@ -27,7 +27,7 @@ jobs:
 
   # Deploy to the production environment.
   deploy-production:
-    uses: ccie/My-website-environments/.github/workflows/deploy.yml@main
+    uses: ccie/My-website-environment/.github/workflows/deploy.yml@main
     needs: deploy-test
     with:
       environmentType: Production
